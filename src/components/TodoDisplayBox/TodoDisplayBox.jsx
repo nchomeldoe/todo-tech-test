@@ -8,15 +8,7 @@ const TodoDisplayBox = ({
   handleToggleCrossedOut,
   crossedOut,
 }) => {
-  const [crossedOutModifier, setCrossedOutModifier] = useState("");
-
-  const toggleCrossedOutModifier = () => {
-    if (!crossedOutModifier) {
-      setCrossedOutModifier("crossed-out");
-    } else {
-      setCrossedOutModifier("");
-    }
-  };
+  const crossedOutModifier = crossedOut ? "crossed-out" : "";
 
   return (
     <form className="todo-display-box" onSubmit={handleSubmit}>

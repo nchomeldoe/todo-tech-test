@@ -75,14 +75,13 @@ const App = () => {
     const updatedTodos = [...todos];
     todos[indexToToggle].crossedOut = !crossedOutStatus;
     setTodos(updatedTodos);
-    console.log(todos);
   };
-
-  console.log(todos);
 
   const handleRemoveTodo = (e) => {
     e.preventDefault();
-    const indexToRemove = todos.indexOf(e.target[0].name);
+    const indexToRemove = todos.findIndex(
+      (todo) => todo.name === e.target[0].name,
+    );
     const updatedTodos = [...todos];
     updatedTodos.splice(indexToRemove, 1);
     setTodos(updatedTodos);
