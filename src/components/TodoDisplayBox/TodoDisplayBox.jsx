@@ -9,6 +9,7 @@ const TodoDisplayBox = ({
   handleSubmit,
   handleToggleCrossedOut,
   crossedOut,
+  todoId,
 }) => {
   const crossedOutModifier = crossedOut ? "crossed-out" : "";
 
@@ -18,13 +19,13 @@ const TodoDisplayBox = ({
         className="todo-display-box__input"
         type="checkbox"
         name={text}
-        id={text}
+        id={todoId}
         onChange={handleToggleCrossedOut}
         checked={crossedOut}
       />
       <label
         className={`todo-display-box__label todo-display-box__label--${crossedOutModifier}`}
-        htmlFor={text}
+        htmlFor={todoId}
       >
         {text}
       </label>

@@ -26,11 +26,12 @@ const Main = ({
           <FontAwesomeIcon className="main__point-icon" icon={faHandPointUp} />
         </p>
       ) : (
-        todos.map((todo, i) => {
-          const { name, crossedOut } = todo;
+        todos.map((todo) => {
+          const { name, crossedOut, todoId } = todo;
           return (
             <TodoDisplayBox
-              key={`${name}-${i}`}
+              key={todoId}
+              todoId={todoId}
               text={name}
               handleSubmit={handleRemoveTodo}
               crossedOut={crossedOut}
