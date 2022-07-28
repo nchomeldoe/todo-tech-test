@@ -16,6 +16,7 @@ const TodoDisplayBox = ({
         name={text}
         id={text}
         onChange={handleToggleCrossedOut}
+        checked={crossedOut}
       />
       <label
         className={`todo-display-box__label todo-display-box__label--${crossedOutModifier}`}
