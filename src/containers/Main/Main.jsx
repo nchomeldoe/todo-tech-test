@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandPointUp } from "@fortawesome/free-solid-svg-icons";
+
 import TodoInputBox from "../../components/TodoInputBox/TodoInputBox";
 import TodoDisplayBox from "../../components/TodoDisplayBox/TodoDisplayBox";
 import "./Main.scss";
@@ -20,6 +23,7 @@ const Main = ({
       {!todos.length ? (
         <p className="main__no-todos-message">
           Nothing to see here yet... Add a task in the field above!
+          <FontAwesomeIcon className="main__point-icon" icon={faHandPointUp} />
         </p>
       ) : (
         todos.map((todo, i) => {

@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+
 import FormSubmitButton from "../FormSubmitButton/FormSubmitButton";
 import "./TodoInputBox.scss";
 
@@ -13,7 +16,14 @@ const TodoInputBox = ({ handleSubmit, handleInput, inputValue }) => {
         onChange={handleInput}
         value={inputValue}
       />
-      <FormSubmitButton content="+" />
+      <FormSubmitButton
+        content={
+          <FontAwesomeIcon
+            className="todo-input-box__plus-icon"
+            icon={faCirclePlus}
+          />
+        }
+      />
     </form>
   );
 };

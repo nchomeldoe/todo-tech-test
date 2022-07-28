@@ -8,8 +8,6 @@ const App = () => {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
-  console.log(inputValue);
-
   const handleReset = () => {
     setTodos([]);
     setInputValue("");

@@ -5,4 +5,9 @@
   @media screen and (min-width: 768px) {
     max-width: 28.125rem;
   }
+
+  &__point-icon {
+    color: rgb(255, 174, 0);
+    margin-left: 0.4rem;
+  }
 }

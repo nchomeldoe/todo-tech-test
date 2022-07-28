@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+
 import FormSubmitButton from "../FormSubmitButton/FormSubmitButton";
 import "./TodoDisplayBox.scss";
 
@@ -25,7 +28,14 @@ const TodoDisplayBox = ({
       >
         {text}
       </label>
-      <FormSubmitButton content="-" />
+      <FormSubmitButton
+        content={
+          <FontAwesomeIcon
+            className="todo-input-box__plus-icon"
+            icon={faTrashCan}
+          />
+        }
+      />
     </form>
   );
 };
