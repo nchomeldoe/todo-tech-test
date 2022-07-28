@@ -6,25 +6,33 @@ import "./App.scss";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  console.log(inputValue);
 
   const handleReset = () => {
     setTodos([]);
+    setInputValue("");
+  };
+
+  const handleInput = (e) => {
+    setInputValue(e.target.value);
   };
 
   const handleAddTodo = (e) => {
     e.preventDefault();
-    if (todos.some((todo) => todo.name === e.target[0].value)) {
+    if (todos.some((todo) => todo.name === inputValue)) {
       alert("this item already exists");
-      e.target[0].value = "";
+      setInputValue("");
       return;
     }
-    const todoItem = { name: e.target[0].value, crossedOut: false };
+    const todoItem = { name: inputValue, crossedOut: false };
     if (todoItem.name) {
       setTodos([...todos, todoItem]);
     } else {
       alert("please enter a todo");
     }
-    e.target[0].value = "";
+    setInputValue("");
   };
 
   const handleToggleCrossedOut = (e) => {
@@ -50,6 +58,8 @@ const App = () => {
     <div className="app">
       <Header handleReset={handleReset} />
       <Main
+        inputValue={inputValue}
+        handleInput={handleInput}
         handleToggleCrossedOut={handleToggleCrossedOut}
         handleAddTodo={handleAddTodo}
         handleRemoveTodo={handleRemoveTodo}

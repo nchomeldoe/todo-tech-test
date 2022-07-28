@@ -7,10 +7,16 @@ const Main = ({
   handleRemoveTodo,
   handleToggleCrossedOut,
   todos,
+  handleInput,
+  inputValue,
 }) => {
   return (
     <div className="main">
-      <TodoInputBox handleSubmit={handleAddTodo} />
+      <TodoInputBox
+        handleSubmit={handleAddTodo}
+        handleInput={handleInput}
+        inputValue={inputValue}
+      />
       {!todos.length ? (
         <p className="main__no-todos-message">
           Nothing to see here yet... Add a task in the field above!
