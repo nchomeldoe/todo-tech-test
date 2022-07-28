@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/todo-tech-test/static/css/main.006ff852.css",
-    "main.js": "/todo-tech-test/static/js/main.a30d9b4c.js",
+    "main.js": "/todo-tech-test/static/js/main.28457641.js",
     "static/js/787.e7860ee6.chunk.js": "/todo-tech-test/static/js/787.e7860ee6.chunk.js",
     "index.html": "/todo-tech-test/index.html",
     "main.006ff852.css.map": "/todo-tech-test/static/css/main.006ff852.css.map",
-    "main.a30d9b4c.js.map": "/todo-tech-test/static/js/main.a30d9b4c.js.map",
+    "main.28457641.js.map": "/todo-tech-test/static/js/main.28457641.js.map",
     "787.e7860ee6.chunk.js.map": "/todo-tech-test/static/js/787.e7860ee6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.006ff852.css",
-    "static/js/main.a30d9b4c.js"
+    "static/js/main.28457641.js"
   ]
 }
