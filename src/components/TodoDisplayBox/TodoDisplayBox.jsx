@@ -3,7 +3,16 @@ import { useState } from "react";
 import "./TodoDisplayBox.scss";
 
 const TodoDisplayBox = ({ text, handleSubmit }) => {
-  const [checked, setChecked] = useState(false);
+  const [crossedOutModifier, setCrossedOutModifier] = useState("");
+
+  const toggleCrossedOutModifier = () => {
+    if (!crossedOutModifier) {
+      setCrossedOutModifier("crossed-out");
+    } else {
+      setCrossedOutModifier("");
+    }
+  };
+
   return (
     <form className="todo-display-box" onSubmit={handleSubmit}>
       <input
@@ -11,8 +20,12 @@ const TodoDisplayBox = ({ text, handleSubmit }) => {
         type="checkbox"
         name={text}
         id={text}
+        onChange={toggleCrossedOutModifier}
       />
-      <label className="todo-display-box__label" htmlFor={text}>
+      <label
+        className={`todo-display-box__label todo-display-box__label--${crossedOutModifier}`}
+        htmlFor={text}
+      >
         {text}
       </label>
       <button className="todo-display-box__button" type="submit" value="submit">

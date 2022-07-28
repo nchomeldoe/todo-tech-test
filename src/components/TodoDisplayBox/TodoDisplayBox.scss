@@ -16,6 +16,9 @@
   &__label {
     padding-left: 0.4rem;
     width: 75%;
+    &--crossed-out {
+      text-decoration: line-through;
+    }
   }
 
   &__button {
