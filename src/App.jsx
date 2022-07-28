@@ -1,9 +1,12 @@
+import Header from "./containers/Header/Header";
+import Main from "./containers/Main/Main";
 import "./App.scss";
 
 const App = () => {
   return (
     <div className="app">
-      <p>Testing automtic deployment</p>
+      <Header />
+      <Main />
     </div>
   );
 };
