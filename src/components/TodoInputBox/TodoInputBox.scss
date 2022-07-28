@@ -1,14 +1,8 @@
 @use "../../assets/sass/_variables.scss" as *;
 
 .todo-input-box {
-  border: $border;
-  border-radius: $border-radius;
+  @include todo-box;
   height: 2rem;
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  width: 100%;
-
   &__input {
     border: none;
     padding: 0.4rem;

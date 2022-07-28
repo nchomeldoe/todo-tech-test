@@ -1,3 +1,5 @@
+@use "../../assets/sass/_variables.scss" as *;
+
 .header {
   width: 100vw;
   display: flex;
@@ -9,6 +11,6 @@
     font-size: 2rem;
   }
   @media screen and (min-width: 768px) {
-    max-width: 28.125rem;
+    max-width: $max-width;
   }
 }

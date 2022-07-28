@@ -1,13 +1,8 @@
 @use "../../assets/sass/_variables.scss" as *;
 
 .todo-display-box {
-  border: $border;
-  border-radius: $border-radius;
+  @include todo-box;
   min-height: 3rem;
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  width: 100%;
 
   &__input {
     width: 15%;
