@@ -1,3 +1,4 @@
+import FormSubmitButton from "../FormSubmitButton/FormSubmitButton";
 import "./TodoInputBox.scss";
 
 const TodoInputBox = ({ handleSubmit }) => {
@@ -10,11 +11,7 @@ const TodoInputBox = ({ handleSubmit }) => {
         name="todo-input"
         id="todo-input"
       />
-      <button className="todo-input-box__button" type="submit" value="submit">
-        <label htmlFor="todo-input" className="todo-input-box__label">
-          +
-        </label>
-      </button>
+      <FormSubmitButton content="+" />
     </form>
   );
 };

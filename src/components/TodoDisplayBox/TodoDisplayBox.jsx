@@ -1,3 +1,4 @@
+import FormSubmitButton from "../FormSubmitButton/FormSubmitButton";
 import "./TodoDisplayBox.scss";
 
 const TodoDisplayBox = ({
@@ -24,9 +25,7 @@ const TodoDisplayBox = ({
       >
         {text}
       </label>
-      <button className="todo-display-box__button" type="submit" value="submit">
-        -
-      </button>
+      <FormSubmitButton content="-" />
     </form>
   );
 };
