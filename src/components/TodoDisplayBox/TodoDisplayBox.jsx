@@ -2,7 +2,12 @@ import { useState } from "react";
 
 import "./TodoDisplayBox.scss";
 
-const TodoDisplayBox = ({ text, handleSubmit }) => {
+const TodoDisplayBox = ({
+  text,
+  handleSubmit,
+  handleToggleCrossedOut,
+  crossedOut,
+}) => {
   const [crossedOutModifier, setCrossedOutModifier] = useState("");
 
   const toggleCrossedOutModifier = () => {
@@ -20,7 +25,7 @@ const TodoDisplayBox = ({ text, handleSubmit }) => {
         type="checkbox"
         name={text}
         id={text}
-        onChange={toggleCrossedOutModifier}
+        onChange={handleToggleCrossedOut}
       />
       <label
         className={`todo-display-box__label todo-display-box__label--${crossedOutModifier}`}
