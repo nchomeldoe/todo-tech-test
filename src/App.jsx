@@ -7,10 +7,12 @@ import "./App.scss";
 const App = () => {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [uniqueId, setUniqueId] = useState(1);
 
   const handleReset = () => {
     setTodos([]);
     setInputValue("");
+    setUniqueId(1);
   };
 
   const handleInput = (e) => {
@@ -19,23 +21,19 @@ const App = () => {
 
   const handleAddTodo = (e) => {
     e.preventDefault();
-    if (todos.some((todo) => todo.name === inputValue)) {
-      alert("this item already exists");
-      setInputValue("");
-      return;
-    }
-    const todoItem = { name: inputValue, crossedOut: false };
+    const todoItem = { name: inputValue, crossedOut: false, todoId: uniqueId };
     if (todoItem.name) {
       setTodos([...todos, todoItem]);
     } else {
       alert("please enter a todo");
     }
     setInputValue("");
+    setUniqueId(uniqueId + 1);
   };
 
   const handleToggleCrossedOut = (e) => {
     const indexToToggle = todos.findIndex(
-      (todo) => todo.name === e.target.name,
+      (todo) => todo.todoId === Number(e.target.id),
     );
     const crossedOutStatus = todos[indexToToggle].crossedOut;
     const updatedTodos = [...todos];
@@ -46,7 +44,7 @@ const App = () => {
   const handleRemoveTodo = (e) => {
     e.preventDefault();
     const indexToRemove = todos.findIndex(
-      (todo) => todo.name === e.target[0].name,
+      (todo) => todo.todoId === Number(e.target[0].id),
     );
     const updatedTodos = [...todos];
     updatedTodos.splice(indexToRemove, 1);
